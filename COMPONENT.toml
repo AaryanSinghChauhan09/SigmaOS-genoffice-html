@@ -1,0 +1,16 @@
+[component]
+name = "SigmaOS-genoffice-html"
+tier = 3
+stability = "scaffold"
+language = "rust"
+description = "GenOffice HTML authoring — WYSIWYG editing, accessibility validation, sanitizer, and web export pipeline"
+upstream = []
+
+[contract]
+provides = ["html-authoring", "wysiwyg"]
+depends_on = []
+
+[maturity]
+status = "Scaffold"
+test_evidence = "Compiles"
+next_milestone = "Verification test suite"

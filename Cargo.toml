@@ -1,0 +1,9 @@
+[package]
+name = "sigmaos_genoffice_html"
+version = "0.1.0"
+edition = "2021"
+description = "GenOffice HTML authoring — WYSIWYG editing, accessibility validation, sanitizer, and web export pipeline"
+
+[lib]
+name = "sigmaos_genoffice_html"
+path = "src/lib.rs"
