@@ -58,9 +58,17 @@ impl HtmlDocument {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn element_render() {
-        let el = HtmlElement::new("h1", "Hello SigmaOS").with_id("title");
+    fn test_element_render_aaa() {
+        // Arrange
+        let tag = "h1";
+        let text = "Hello SigmaOS";
+
+        // Act
+        let el = HtmlElement::new(tag, text).with_id("title");
+
+        // Assert
         assert!(el.render().contains("id=\"title\""));
     }
 }
