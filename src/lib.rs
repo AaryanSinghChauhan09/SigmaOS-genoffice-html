@@ -8,12 +8,29 @@ pub struct HtmlElement {
 
 impl HtmlElement {
     pub fn new(tag: impl Into<String>, inner_text: impl Into<String>) -> Self {
-        Self { tag: tag.into(), id: None, class: None, inner_text: inner_text.into() }
+        Self {
+            tag: tag.into(),
+            id: None,
+            class: None,
+            inner_text: inner_text.into(),
+        }
     }
-    pub fn with_id(mut self, id: impl Into<String>) -> Self { self.id = Some(id.into()); self }
+    pub fn with_id(mut self, id: impl Into<String>) -> Self {
+        self.id = Some(id.into());
+        self
+    }
     pub fn render(&self) -> String {
-        let id_attr = self.id.as_ref().map(|v| format!(" id=\"{}\"", v)).unwrap_or_default();
-        format!("<{tag}{id}>{text}</{tag}>", tag=self.tag, id=id_attr, text=self.inner_text)
+        let id_attr = self
+            .id
+            .as_ref()
+            .map(|v| format!(" id=\"{}\"", v))
+            .unwrap_or_default();
+        format!(
+            "<{tag}{id}>{text}</{tag}>",
+            tag = self.tag,
+            id = id_attr,
+            text = self.inner_text
+        )
     }
 }
 
@@ -24,9 +41,18 @@ pub struct HtmlDocument {
 }
 
 impl HtmlDocument {
-    pub fn new(title: impl Into<String>) -> Self { Self { title: title.into(), elements: Vec::new() } }
-    pub fn append(&mut self, el: HtmlElement) { self.elements.push(el); }
-    pub fn element_count(&self) -> usize { self.elements.len() }
+    pub fn new(title: impl Into<String>) -> Self {
+        Self {
+            title: title.into(),
+            elements: Vec::new(),
+        }
+    }
+    pub fn append(&mut self, el: HtmlElement) {
+        self.elements.push(el);
+    }
+    pub fn element_count(&self) -> usize {
+        self.elements.len()
+    }
 }
 
 #[cfg(test)]
