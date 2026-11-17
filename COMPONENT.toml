@@ -3,7 +3,7 @@ name = "SigmaOS-genoffice-html"
 tier = 3
 stability = "scaffold"
 language = "rust"
-description = "GenOffice HTML authoring — WYSIWYG editing, accessibility validation, sanitizer, and web export pipeline"
+description = "No GitHub description is set; component scope remains unclassified."
 upstream = []
 
 [contract]
