@@ -1,9 +1,9 @@
 [component]
 name = "SigmaOS-genoffice-html"
 tier = 3
-stability = "scaffold"
+stability = "beta"
 language = "rust"
-description = "No GitHub description is set; component scope remains unclassified."
+description = "HTML parser, sanitizer, validator, and text extractor with CLI"
 upstream = []
 
 [contract]
@@ -11,6 +11,6 @@ provides = ["html-authoring", "wysiwyg"]
 depends_on = []
 
 [maturity]
-status = "Scaffold"
-test_evidence = "Compiles"
-next_milestone = "Verification test suite"
+status = "Implemented"
+test_evidence = "cargo test --offline unit tests pass"
+next_milestone = "Full HTML5 parsing and accessibility checks"
